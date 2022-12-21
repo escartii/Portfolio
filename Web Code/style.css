@@ -1,0 +1,75 @@
+html, body {
+    background: rgb(20,20,20);
+    text-align: center;
+    height: 100%;
+    overflow: hidden;
+  }
+  .svg-wrapper {
+    top: 10px;
+    transform: translateY(-10%);
+      margin: 0 auto; 
+  }
+  .shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    /* Añado el efecto en movimiento de color naranja */
+    stroke: #d4791f;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  }
+  .text {
+    font-family: 'Roboto Condensed';
+    font-size: 30px;
+    line-height: 32px;
+    letter-spacing: 8px;
+    color: rgb(255, 255, 255);
+    top: -48px;
+    position: relative;
+  }
+  .svg-wrapper:hover .shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 760;
+  }
+
+
+img {
+    --color: #FA6900; /* the color of the border */
+    --border: 10px;   /* the thickness of the border */
+    --offset: 30px;   /* control the movement of the border */
+    --gap: 5px;       /* the gap on hover */
+    
+    border-radius: 50%;
+    cursor: pointer;
+    padding: calc(var(--border) + var(--gap));
+    border: var(--offset) solid rgba(255, 255, 255, 0);
+    --_m: radial-gradient(50% 50%, #000 calc(100% - var(--offset)),#0000 calc(100% - var(--border)));
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    --_g: #0000 calc(99% - var(--border)), var(--color) calc(100% - var(--border)) 99%,#0000;
+    --_s: var(--offset);
+    --_r: 100% 100% at;
+    background:
+      radial-gradient(var(--_r) 0    0   ,var(--_g)) calc(100% + var(--_s)) calc(100% + var(--_s)),
+      radial-gradient(var(--_r) 100% 0   ,var(--_g)) calc(0%   - var(--_s)) calc(100% + var(--_s)),
+      radial-gradient(var(--_r) 0    100%,var(--_g)) calc(100% + var(--_s)) calc(0%   - var(--_s)),
+      radial-gradient(var(--_r) 100% 100%,var(--_g)) calc(0%   - var(--_s)) calc(0%   - var(--_s));
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    transition: .4s;
+  }
+  img:hover {
+    --_s: 0px
+  }
+  
+  
+  body {
+    margin:0;
+    background:rgb(4, 4, 4);
+    display:grid;
+    min-height:100vh;
+    grid-auto-flow:column;
+    place-content:center;
+  }
