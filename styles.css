@@ -1,0 +1,140 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222831;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
+    overflow-x: hidden; /* Ensure the images don't scroll the page */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%; /* Increase width percentage */
+    max-width: 80%; /* Ajusta según lo necesario */
+    margin-top: 100px; /* espacio arriba */
+    margin-bottom: 100px; /* espacio abajo */
+}
+
+.neon-border {
+    position: relative;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    color: #f96d00;
+    font-size: 24px;
+    text-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
+    border: 2px solid #f96d00;
+    box-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
+    background-color: rgba(53, 53, 53, 0.5); /* Semi-transparent background */
+    width: 100%; /* Ajusta el ancho */
+    max-width: 700px; /* Máximo ancho deseado */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.titulo-principal {
+    color: white;
+    font-size: 30px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.titulo {
+    margin-bottom: 20px;
+    color: white;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-size: 18px; /* Ajusta el tamaño según lo necesites */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+.js, .mysql, .html {
+    position: absolute;
+}
+
+.js img, .mysql img, .html img {
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 20px #f96d00);
+}
+
+@keyframes float-js {
+    0% { transform: translate(350px, 150px); } /* Punto de inicio */
+    25% { transform: translate(350px, -400px); } /* Mueve hacia arriba */
+    50% { transform: translate(-350px, -400px); } /* Mueve hacia la izquierda */
+    75% { transform: translate(-350px, 150px); } /* Mueve hacia abajo */
+    100% { transform: translate(350px, 150px); } /* Regresa al punto de partida */
+}
+
+@keyframes float-mysql {
+    0% { transform: translate(-350px, 150px); } /* Punto de inicio */
+    25% { transform: translate(-350px, -400px); } /* Mueve hacia arriba */
+    50% { transform: translate(350px, -400px); } /* Mueve hacia la derecha */
+    75% { transform: translate(350px, 150px); } /* Mueve hacia abajo */
+    100% { transform: translate(-350px, 150px); } /* Regresa al punto de partida */
+}
+
+@keyframes float-html {
+    0% { transform: translate(-350px, -400px); } /* Empieza en la esquina superior izquierda */
+    25% { transform: translate(-350px, 150px); } /* Mueve hacia abajo */
+    50% { transform: translate(350px, 150px); } /* Mueve hacia la derecha */
+    75% { transform: translate(350px, -400px); } /* Mueve hacia arriba */
+    100% { transform: translate(-350px, -400px); } /* Regresa al punto de partida */
+}
+
+
+.floating-js {
+    animation: float-js 10s infinite ease-in-out;
+}
+
+.floating-mysql {
+    animation: float-mysql 10s infinite ease-in-out;
+}
+
+.floating-html {
+    animation: float-html 10s infinite ease-in-out;
+}
+
+.perfil {
+    width: 150px; /* Ajusta según sea necesario */
+    height: 150px; /* Ajusta según sea necesario */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen cubra el círculo */
+    margin-bottom: 20px; /* Espacio inferior */
+    margin-top: 10px; /* Ajusta el espacio superior negativo para bajar la imagen */
+    max-width: 50%;
+}
+
+.arrow {
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.contacto {
+    color: white;
+    font-size: 30px;
+    box-shadow: none;
+    text-shadow: none;
+    margin-left: -35%;
+    text-decoration: none;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 100px; /* Espaciado entre los íconos de redes sociales */
+    margin-top: 20px; /* Espacio arriba del contenedor de redes sociales */
+}
+
+.redes-sociales a {
+    display: block;
+}
+
+.redes-sociales img {
+    width: 40px; /* Tamaño de los íconos de redes sociales, ajusta según sea necesario */
+    height: auto;
+}
