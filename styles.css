@@ -4,8 +4,8 @@ body {
     align-items: center;
     background-color: #222831;
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Cambia la fuente a Roboto */
-    overflow-x: hidden; /* Ensure the images don't scroll the page */
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
@@ -14,10 +14,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%; /* Increase width percentage */
-    max-width: 80%; /* Ajusta según lo necesario */
-    margin-top: 100px; /* espacio arriba */
-    margin-bottom: 100px; /* espacio abajo */
+    width: 100%;
+    max-width: 80%;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .neon-border {
@@ -30,10 +30,14 @@ body {
     text-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
     border: 2px solid #f96d00;
     box-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
-    background-color: rgba(53, 53, 53, 0.5); /* Semi-transparent background */
-    width: 100%; /* Ajusta el ancho */
-    max-width: 700px; /* Máximo ancho deseado */
-    box-sizing: border-box; /* Incluye padding en el ancho total */
+    background-color: rgba(53, 53, 53, 0.5);
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    padding: 0;
 }
 
 .titulo-principal {
@@ -49,8 +53,8 @@ body {
     border: none;
     box-shadow: none;
     text-shadow: none;
-    font-size: 18px; /* Ajusta el tamaño según lo necesites */
-    line-height: 1.5; /* Mejora la legibilidad */
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .js, .mysql, .html {
@@ -64,29 +68,28 @@ body {
 }
 
 @keyframes float-js {
-    0% { transform: translate(350px, 150px); } /* Punto de inicio */
-    25% { transform: translate(350px, -400px); } /* Mueve hacia arriba */
-    50% { transform: translate(-350px, -400px); } /* Mueve hacia la izquierda */
-    75% { transform: translate(-350px, 150px); } /* Mueve hacia abajo */
-    100% { transform: translate(350px, 150px); } /* Regresa al punto de partida */
+    0% { transform: translate(350px, 150px); }
+    25% { transform: translate(350px, -400px); }
+    50% { transform: translate(-350px, -400px); }
+    75% { transform: translate(-350px, 150px); }
+    100% { transform: translate(350px, 150px); }
 }
 
 @keyframes float-mysql {
-    0% { transform: translate(-350px, 150px); } /* Punto de inicio */
-    25% { transform: translate(-350px, -400px); } /* Mueve hacia arriba */
-    50% { transform: translate(350px, -400px); } /* Mueve hacia la derecha */
-    75% { transform: translate(350px, 150px); } /* Mueve hacia abajo */
-    100% { transform: translate(-350px, 150px); } /* Regresa al punto de partida */
+    0% { transform: translate(-350px, 150px); }
+    25% { transform: translate(-350px, -400px); }
+    50% { transform: translate(350px, -400px); }
+    75% { transform: translate(350px, 150px); }
+    100% { transform: translate(-350px, 150px); }
 }
 
 @keyframes float-html {
-    0% { transform: translate(-350px, -400px); } /* Empieza en la esquina superior izquierda */
-    25% { transform: translate(-350px, 150px); } /* Mueve hacia abajo */
-    50% { transform: translate(350px, 150px); } /* Mueve hacia la derecha */
-    75% { transform: translate(350px, -400px); } /* Mueve hacia arriba */
-    100% { transform: translate(-350px, -400px); } /* Regresa al punto de partida */
+    0% { transform: translate(-350px, -400px); }
+    25% { transform: translate(-350px, 150px); }
+    50% { transform: translate(350px, 150px); }
+    75% { transform: translate(350px, -400px); }
+    100% { transform: translate(-350px, -400px); }
 }
-
 
 .floating-js {
     animation: float-js 10s infinite ease-in-out;
@@ -101,12 +104,12 @@ body {
 }
 
 .perfil {
-    width: 150px; /* Ajusta según sea necesario */
-    height: 150px; /* Ajusta según sea necesario */
-    border-radius: 50%; /* Hace la imagen circular */
-    object-fit: cover; /* Asegura que la imagen cubra el círculo */
-    margin-bottom: 20px; /* Espacio inferior */
-    margin-top: 10px; /* Ajusta el espacio superior negativo para bajar la imagen */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    margin-top: 10px;
     max-width: 50%;
 }
 
@@ -126,8 +129,8 @@ body {
 
 .redes-sociales {
     display: flex;
-    gap: 100px; /* Espaciado entre los íconos de redes sociales */
-    margin-top: 20px; /* Espacio arriba del contenedor de redes sociales */
+    gap: 100px;
+    margin-top: 20px;
 }
 
 .redes-sociales a {
@@ -135,6 +138,51 @@ body {
 }
 
 .redes-sociales img {
-    width: 40px; /* Tamaño de los íconos de redes sociales, ajusta según sea necesario */
+    width: 40px;
     height: auto;
+}
+
+/* Estilos para la sección de repositorios */
+.repositorios {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    background-color: rgba(53, 53, 53, 0.5);
+    border: 2px solid #f96d00;
+    box-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
+}
+
+.repositorios h2 {
+    color: #fefefe;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.repositorios ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repositorios li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.repositorios li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.repositorios a {
+    color: #f96d00;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.repositorios a:hover {
+    text-decoration: underline;
 }

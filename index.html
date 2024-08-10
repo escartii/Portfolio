@@ -10,9 +10,9 @@
 <body>
     <div class="container">
         <div class="neon-border">
-            <h1 class="titulo-principal">Álvaro Escartí</h1>
+            <h1 class="titulo-principal">Desarrollador de aplicaciones web</h1>
             <img src="./img/perfil.jpg" alt="Álvaro Escartí" class="perfil">
-            <p class="titulo">Hola, soy Álvaro Escartí, tengo 23 años y vivo en la vibrante ciudad de Valencia. Soy un apasionado desarrollador web con una gran fascinación por la programación. Me encanta transformar ideas en soluciones digitales innovadoras y funcionales. Con experiencia en JavaScript,HTML & CSS. Siempre estoy buscando nuevos desafíos y oportunidades para crecer en el mundo del desarrollo. ¡Estoy emocionado por conectar y colaborar en proyectos que marquen la diferencia!</p>
+            <p class="titulo">Bienvenid@❗, soy Álvaro Escartí, tengo 23 años y vivo en la vibrante ciudad de Valencia. Soy un apasionado desarrollador web con una gran fascinación por la programación. Me encanta transformar ideas en soluciones digitales innovadoras y funcionales. Con experiencia en JavaScript, HTML & CSS. Siempre estoy buscando nuevos desafíos y oportunidades para crecer en el mundo del desarrollo. ¡Estoy emocionado por conectar y colaborar en proyectos que marquen la diferencia!</p>
         </div>
         <div class="js floating-js">
             <img src="./img/js.png" alt="JavaScript">
@@ -27,7 +27,6 @@
             <img src="./img/arrow.png">
             <p class="contacto"> ¿Hablamos?</p>
         </div>
-
         <div class="redes-sociales">
             <a href="https://github.com/escartii">
                 <img src="./img/github.png" alt="GitHub">
@@ -38,12 +37,31 @@
             <a href="https://twitter.com/escartii">
                 <img src="./img/twitter.png" alt="Twitter">
             </a>
-
             <a href="https://www.linkedin.com/in/álvaro-escartí-lamolda-91a652277/">
                 <img src="./img/linkedin.png" alt="LinkedIn">
             </a>
         </div>
+
+        <!-- Sección para mostrar los repositorios de GitHub -->
+        <div id="repositorios" class="repositorios">
+            <h2>Proyectos personales</h2>
+            <ul id="repos-list"></ul>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Hacer la solicitud a la API de GitHub para obtener los repositorios
+        fetch('https://api.github.com/users/escartii/repos')
+            .then(response => response.json())
+            .then(data => {
+                const reposList = document.getElementById('repos-list');
+                data.forEach(repo => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a> - ${repo.description || 'Sin descripción'}`;
+                    reposList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error al cargar los repositorios:', error));
+    </script>
 </body>
 </html>
