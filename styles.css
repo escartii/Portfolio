@@ -57,38 +57,53 @@ body {
     line-height: 1.5;
 }
 
-.js, .mysql, .html {
+.js, .mysql, .html, .java {
     position: absolute;
 }
 
-.js img, .mysql img, .html img {
+.js img, .mysql img, .html img, .java img {
     width: 50px;
     height: auto;
     filter: drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 20px #f96d00);
 }
 
 @keyframes float-js {
-    0% { transform: translate(350px, 150px); }
-    25% { transform: translate(350px, -400px); }
-    50% { transform: translate(-350px, -400px); }
-    75% { transform: translate(-350px, 150px); }
-    100% { transform: translate(350px, 150px); }
+    0% { transform: translate(-360px, -360px); } /* Comienza en la esquina superior izquierda */
+    25% { transform: translate(-350px, -937.8px); } /* Baja 1 cm más */
+    50% { transform: translate(350px, -937.8px); } /* Mueve a la derecha */
+    75% { transform: translate(350px, -360px); } /* Sube a la misma posición horizontal */
+    100% { transform: translate(-360px, -360px); } /* Regresa a la posición inicial pero sube 1 cm más */
 }
 
+
+
+
 @keyframes float-mysql {
-    0% { transform: translate(-350px, 150px); }
-    25% { transform: translate(-350px, -400px); }
-    50% { transform: translate(350px, -400px); }
-    75% { transform: translate(350px, 150px); }
-    100% { transform: translate(-350px, 150px); }
+    0% { transform: translate(350px, 150px); } /* Posición inicial */
+    25% { transform: translate(350px, -400px); } /* Baja */
+    50% { transform: translate(-350px, -400px); } /* Mueve a la izquierda */
+    75% { transform: translate(-350px, 150px); } /* Sube */
+    100% { transform: translate(350px, 150px); } /* Regresa a la posición inicial */
 }
 
 @keyframes float-html {
-    0% { transform: translate(-350px, -400px); }
-    25% { transform: translate(-350px, 150px); }
-    50% { transform: translate(350px, 150px); }
-    75% { transform: translate(350px, -400px); }
-    100% { transform: translate(-350px, -400px); }
+    0% { transform: translate(-350px, -900px); } /* Posición inicial */
+    25% { transform: translate(-350px, -500px); } /* Movimiento hacia abajo */
+    50% { transform: translate(350px, -500px); } /* Movimiento hacia la derecha */
+    75% { transform: translate(350px, -900px); } /* Movimiento hacia arriba */
+    100% { transform: translate(-350px, -900px); } /* Regresa a la posición inicial */
+}
+
+@keyframes float-java {
+    0% { transform: translate(350px, -900px); } /* Comienza en la esquina superior derecha */
+    25% { transform: translate(350px, -500px); } /* Baja */
+    50% { transform: translate(-350px, -500px); } /* Mueve a la izquierda */
+    75% { transform: translate(-350px, -900px); } /* Sube */
+    100% { transform: translate(350px, -900px); } /* Regresa a la posición inicial */
+}
+
+.floating-java {
+    animation: float-java 10s infinite ease-in-out;
 }
 
 .floating-js {
