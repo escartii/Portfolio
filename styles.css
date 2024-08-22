@@ -2,10 +2,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #222831;
+    background-color: #0e0e0f; /* Fondo oscuro para el cuerpo */
     margin: 0;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    position: relative;
 }
 
 .container {
@@ -25,22 +26,19 @@ body {
     padding: 30px;
     margin: 20px;
     text-align: center;
-    color: #f96d00;
+    color: #1e90ff; /* Azul cielo oscuro */
     font-size: 24px;
-    text-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
-    border: 2px solid #f96d00;
-    box-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
+    text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff; /* Efecto neón azul */
+    border: 2px solid #1e90ff;
+    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff;
     background-color: rgba(53, 53, 53, 0.5);
     width: 100%;
     max-width: 700px;
     box-sizing: border-box;
 }
 
-.slider-container {
-    padding: 0;
-}
-
 .titulo-principal {
+    margin-top: 7%;
     color: white;
     font-size: 30px;
     box-shadow: none;
@@ -53,69 +51,83 @@ body {
     border: none;
     box-shadow: none;
     text-shadow: none;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.5;
 }
 
 .js, .mysql, .html, .java {
     position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .js img, .mysql img, .html img, .java img {
-    width: 50px;
+    width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 2px #f96d00) drop-shadow(0 0 20px #f96d00);
+    filter: drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 5px #1e90ff); /* Efecto de sombra azul */
 }
 
-@keyframes float-js {
-    0% { transform: translate(-360px, -360px); } /* Comienza en la esquina superior izquierda */
-    25% { transform: translate(-350px, -937.8px); } /* Baja 1 cm más */
-    50% { transform: translate(350px, -937.8px); } /* Mueve a la derecha */
-    75% { transform: translate(350px, -360px); } /* Sube a la misma posición horizontal */
-    100% { transform: translate(-360px, -360px); } /* Regresa a la posición inicial pero sube 1 cm más */
+/* Cometas */
+.comet-blue, .comet-white {
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px;
+    animation-timing-function: ease-in-out;
 }
 
-
-
-
-@keyframes float-mysql {
-    0% { transform: translate(350px, 150px); } /* Posición inicial */
-    25% { transform: translate(350px, -400px); } /* Baja */
-    50% { transform: translate(-350px, -400px); } /* Mueve a la izquierda */
-    75% { transform: translate(-350px, 150px); } /* Sube */
-    100% { transform: translate(350px, 150px); } /* Regresa a la posición inicial */
+.comet-blue {
+    background: rgba(0, 153, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 153, 255, 0.8);
+    animation: cometBlue 7s infinite;
 }
 
-@keyframes float-html {
-    0% { transform: translate(-350px, -900px); } /* Posición inicial */
-    25% { transform: translate(-350px, -500px); } /* Movimiento hacia abajo */
-    50% { transform: translate(350px, -500px); } /* Movimiento hacia la derecha */
-    75% { transform: translate(350px, -900px); } /* Movimiento hacia arriba */
-    100% { transform: translate(-350px, -900px); } /* Regresa a la posición inicial */
+.comet-white {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: cometWhite 10s infinite;
 }
 
-@keyframes float-java {
-    0% { transform: translate(350px, -900px); } /* Comienza en la esquina superior derecha */
-    25% { transform: translate(350px, -500px); } /* Baja */
-    50% { transform: translate(-350px, -500px); } /* Mueve a la izquierda */
-    75% { transform: translate(-350px, -900px); } /* Sube */
-    100% { transform: translate(350px, -900px); } /* Regresa a la posición inicial */
+@keyframes cometBlue {
+    0% {
+        top: -10%;
+        left: 100%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    100% {
+        top: 110%;
+        left: -10%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
 }
 
-.floating-java {
-    animation: float-java 10s infinite ease-in-out;
+@keyframes cometWhite {
+    0% {
+        top: 10%;
+        left: -10%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    100% {
+        top: 110%;
+        left: 110%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
 }
 
-.floating-js {
-    animation: float-js 10s infinite ease-in-out;
-}
-
-.floating-mysql {
-    animation: float-mysql 10s infinite ease-in-out;
-}
-
-.floating-html {
-    animation: float-html 10s infinite ease-in-out;
+/* Fondo estrellado */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .perfil {
@@ -164,8 +176,8 @@ body {
     max-width: 700px;
     padding: 30px;
     background-color: rgba(53, 53, 53, 0.5);
-    border: 2px solid #f96d00;
-    box-shadow: 0 0 5px #f96d00, 0 0 10px #f96d00, 0 0 20px #f96d00, 0 0 40px #f96d00;
+    border: 2px solid #1e90ff;
+    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff;
 }
 
 .repositorios h2 {
@@ -193,11 +205,45 @@ body {
 }
 
 .repositorios a {
-    color: #f96d00;
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
 }
 
 .repositorios a:hover {
     text-decoration: underline;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 80px; /* Espacio uniforme entre los íconos */
+    margin-top: 5%;
+    color: #fefefe;
+    filter: drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 5px #1e90ff); /* Sombra azul para los íconos */
+    /* No necesitas justify-content: space-between si usas gap */
+}
+
+/* Estilos básicos para el navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    padding: 10px;
+    z-index: 1000; /* Asegura que el navbar esté encima del contenido */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semi-transparente al pasar el ratón */
 }
