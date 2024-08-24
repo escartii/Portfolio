@@ -405,6 +405,7 @@ body::before {
 }
 
 .titulo-proyectos {
+    margin-top: 5%;
     color: white;
     font-size: 24px;
     box-shadow: none;
@@ -452,6 +453,7 @@ body::before {
     width: 300px;
     filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 1px #f8f8f8) drop-shadow(0 0 5px #fdfeff); /* Sombra azul para los íconos */
     transition: transform 0.3s ease-in-out;
+    text-align: center; 
 }
 
 .repo-card h3 {
@@ -501,4 +503,41 @@ body::before {
 
 .repo-card .btn:hover {
     background-color: #0077b6;
+}
+
+.github-button {
+    display: inline-flex; /* Cambia a inline-flex para que no ocupe todo el ancho */
+    align-items: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 5px 10px; /* Reduce el padding para hacer el botón más pequeño */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+.github-button img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.github-button span {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.star-icon {
+    width: 15px; /* Ajusta el tamaño de la estrella */
+    margin-bottom: 3px; /* Ajusta la posición vertical de la estrella */
+    color: rgb(251, 255, 0);
+}
+.github-button:hover {
+    background-color: #444;
+}
+
+.star-icon {
+    width: 20px;
+    margin-bottom: 5px;
+    color:rgb(251, 255, 0);
 }
