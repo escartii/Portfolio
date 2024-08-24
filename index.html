@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Neon</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap">
+
 </head>
+
 <body>
     <div class="navbar">
         <a href="#tecnologias">Tecnologías</a>
-        <a href="#repositorios">Proyectos</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
         <!-- Puedes añadir más enlaces aquí si lo deseas -->
     </div>
-    
+
     <div class="container">
         <div class="neon-border">
             <h1 class="titulo-principal">Desarrollador de aplicaciones web</h1>
             <img src="./img/perfil.jpg" alt="Álvaro Escartí" class="perfil">
-            <p class="titulo">Bienvenido, soy Álvaro Escartí, tengo 23 años y vivo en la vibrante ciudad de Valencia. Soy un apasionado desarrollador web con una gran fascinación por la programación. Me encanta transformar ideas en soluciones digitales innovadoras y funcionales. Con experiencia en JavaScript, HTML & CSS. Siempre estoy buscando nuevos desafíos y oportunidades para crecer en el mundo del desarrollo. ¡Estoy emocionado por conectar y colaborar en proyectos que marquen la diferencia!</p>
+            <p class="texto">Bienvenido, soy Álvaro Escartí, tengo 23 años y vivo en la vibrante ciudad de Valencia. Soy
+                un apasionado desarrollador web con una gran fascinación por la programación. Me encanta transformar
+                ideas en soluciones digitales innovadoras y funcionales. Con experiencia en JavaScript, HTML & CSS.
+                Siempre estoy buscando nuevos desafíos y oportunidades para crecer en el mundo del desarrollo. ¡Estoy
+                emocionado por conectar y colaborar en proyectos que marquen la diferencia!</p>
         </div>
         <div class="js floating-js">
             <img src="./img/js.png" alt="JavaScript">
@@ -54,40 +62,125 @@
 
         <!-- Sección para mostrar los repositorios de GitHub -->
         <div id="repositorios" class="repositorios">
-            <h2>Proyectos personales</h2>
-            <ul id="repos-list"></ul>
-        </div>
-
-        <h2 id="tecnologias" class="titulo-principal"> Tecnologías que utilizo</h2>
-        <div class="tecnologias">
-            <a href="https://github.com/escartii">
-                <img src="./img/js.png" alt="GitHub">
-            </a>
-            <a href="https://gitlab.com/escartii">
-                <img src="./img/java.png" alt="GitLab">
-            </a>
-            <a href="https://twitter.com/escartii">
-                <img src="./img/mysql.png" alt="Twitter">
-            </a>
-            <a href="https://www.linkedin.com/in/álvaro-escartí-lamolda-91a652277/">
-                <img src="./img/php.png" alt="LinkedIn">
-            </a>
+            <h2>Repositorios GitHub</h2>
+            <div id="repos-cards" class="repos-cards">
+                <div class="repo-card">
+                    <h3>BashCommands</h3>
+                    <p>Algunos comandos creados por mí y por la comunidad de scripting Bash.</p>
+                    <div class="button-container">
+                        <a href="https://github.com/escartii/BashCommands" target="_blank" class="btn">Ver en GitHub</a>
+                    </div>
+                </div>
+                <div class="repo-card">
+                    <h3>Campeones_Lol</h3>
+                    <p>Proyecto Java que buscas un campeón y te devuelve su imagen.</p>
+                    <div class="button-container">
+                        <a href="https://github.com/escartii/Campeones_Lol" target="_blank" class="btn">Ver en
+                            GitHub</a>
+                    </div>
+                </div>
+                <div class="repo-card">
+                    <h3>CursoJS</h3>
+                    <p>Curso realizado en Udemy 📘</p>
+                    <div class="button-container">
+                        <a href="https://github.com/escartii/CursoJS" target="_blank" class="btn">Ver en GitHub</a>
+                    </div>
+                </div>
+                <!-- Añade más tarjetas para cada repositorio que quieras mostrar -->
+                <div class="repo-card">
+                    <h3>DAW</h3>
+                    <p>Curso 2023-2024</p>
+                    <div class="button-container">
+                        <a href="https://github.com/escartii/DAW" target="_blank" class="btn">Ver en GitHub</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        // Hacer la solicitud a la API de GitHub para obtener los repositorios
-        fetch('https://api.github.com/users/escartii/repos')
-            .then(response => response.json())
-            .then(data => {
-                const reposList = document.getElementById('repos-list');
-                data.forEach(repo => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<a href="${repo.html_url}" target="_blank">${repo.name}</a> - ${repo.description || 'Sin descripción'}`;
-                    reposList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error('Error al cargar los repositorios:', error));
-    </script>
+    <h2 id="tecnologias" class="titulo-tecnologias"> Tecnologías que utilizo</h2>
+    <div class="tecnologias">
+        <a href="https://github.com/escartii">
+            <img src="./img/js.png" alt="GitHub">
+        </a>
+
+        <a href="https://twitter.com/escartii">
+            <img src="./img/mysql.png" alt="Twitter">
+        </a>
+        <a href="https://www.linkedin.com/in/álvaro-escartí-lamolda-91a652277/">
+            <img src="./img/php.png" alt="LinkedIn">
+        </a>
+    </div>
+    </div>
+
+    <h2 id="proyectos" class="titulo-proyectos">Proyectos</h2>
+    <div class="project-cards">
+        <div class="card">
+            <!-- <img src="img/padel.png" alt="Proyecto 3"> -->
+            <h3>qwerty69</h3>
+            <p>Proyecto personal de ventas de licencias OEM para Windows.</p>
+            <p> Este proyecto consiste en una tienda en línea desarrollada con WordPress para la venta de licencias OEM
+                de Windows. Utilizando un diseño intuitivo y una interfaz amigable, el sitio permite a los usuarios
+                explorar, seleccionar y comprar licencias de Windows de manera sencilla. Integrado con herramientas de
+                pago seguras y un sistema de gestión de pedidos eficiente.</p>
+            <p> Tecnologías utilizadas: </p>
+            <ul>
+                <li>Wordpress.</li>
+                <li>Sitio alojado en Hostinger.</li>
+                <li>Estudio de mercado.</li>
+                <li>Posicionamiento SEO.</li>
+                <li>Implementación de pasarelas de pagos.</li>
+            </ul>
+            <div class="buttons">
+                <a href="https://qwerty69.es/" class="btn">Live demo</a>
+            </div>
+        </div>
+        <div class="card">
+            <!-- <img src="img/padel.png" alt="Proyecto 3"> -->
+            <h3>Compara tu gasolina</h3>
+            <p> Proyecto personal junto a Javier Puertas</p>
+            <p>Este proyecto es una plataforma avanzada para comparar precios de combustible en todas las gasolineras de
+                España. Los usuarios pueden buscar y comparar precios de gasolina y diésel en tiempo real, asegurando
+                que siempre encuentren la opción más económica cerca de ellos. Además, ofrecemos un gráfico interactivo
+                que muestra la evolución de los precios diarios, permitiendo a los usuarios analizar tendencias y tomar
+                decisiones informadas sobre dónde repostar. </p>
+            <p> Tecnologías utilizadas: </p>
+            <ul>
+                <li>PHP backend</li>
+                <li>Bootstrap y Javascript</li>
+                <li>Cookies.</li>
+                <li>Posicionamiento SEO.</li>
+                <li>Implementación de pasarelas de pagos.</li>
+            </ul>
+            <div class="buttons">
+                <a href="#" class="btn">Live demo</a>
+            </div>
+        </div>
+        <div class="card">
+            <!-- <img src="img/padel.png" alt="Proyecto 3"> -->
+            <h3>Padel Paiporta</h3>
+            <p>Proyecto final primer curso de DAW</p>
+            <p>Este proyecto gestiona un club de pádel, ofreciendo funcionalidades completas para el registro de
+                usuarios, la reserva de pistas y la administración de una tienda en línea. Los usuarios pueden consultar
+                el ranking de jugadores y el historial de partidos jugados. Además, el sistema está integrado con un BOT
+                de Telegram que notifica a los usuarios sobre las reservas de pistas, asegurando una comunicación
+                eficiente y actualizaciones en tiempo real.</p>
+            <p> Tecnologías utilizadas: </p>
+            <ul>
+                <li>Java junto a JavaFX para crear e implementar interfaces de usuarios.</li>
+                <li>Scene builder para diseño de ventanas.</li>
+                <li>MySQL para manejar la base de datos.</li>
+                <li> PHP para el backend de la web.</li>
+                <li> CSS y JS para darle estilos a la web.</li>
+            </ul>
+            <div class="buttons">
+                <a href="#" class="btn">Live demo</a>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
+
 </html>

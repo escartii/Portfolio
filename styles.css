@@ -4,7 +4,7 @@ body {
     align-items: center;
     background-color: #0e0e0f; /* Fondo oscuro para el cuerpo */
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Anonymous Pro', monospace; /* Aplicar fuente Anonymous Pro */
     overflow-x: hidden;
     position: relative;
 }
@@ -28,9 +28,9 @@ body {
     text-align: center;
     color: #1e90ff; /* Azul cielo oscuro */
     font-size: 24px;
-    text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff; /* Efecto neón azul */
+    text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 3px #1e90ff, 0 0 30px #1e90ff; /* Efecto neón azul */
     border: 2px solid #1e90ff;
-    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff;
+    box-shadow: 0 0 3px #1e90ff, 0 0 10px #1e90ff, 0 0 3px #1e90ff, 0 0 30px #1e90ff;
     background-color: rgba(53, 53, 53, 0.5);
     width: 100%;
     max-width: 700px;
@@ -66,7 +66,7 @@ body {
 .js img, .mysql img, .html img, .java img {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 5px #1e90ff); /* Efecto de sombra azul */
+    filter: drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 3px #1e90ff); /* Efecto de sombra azul */
 }
 
 /* Cometas */
@@ -142,9 +142,19 @@ body::before {
 
 .arrow {
     margin-top: 3%;
-    margin-left: 10%;
+    margin-left: 6%;
 }
 
+.texto {
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+}
 .contacto {
     color: white;
     font-size: 30px;
@@ -171,13 +181,14 @@ body::before {
 
 /* Estilos para la sección de repositorios */
 .repositorios {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
     max-width: 700px;
     padding: 30px;
     background-color: rgba(53, 53, 53, 0.5);
     border: 2px solid #1e90ff;
-    box-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 40px #1e90ff;
+    box-shadow: 0 0 3px #1e90ff, 0 0 10px #1e90ff, 0 0 3px #1e90ff, 0 0 30px #1e90ff;
+    font-family: 'Roboto', sans-serif;
 }
 
 .repositorios h2 {
@@ -219,7 +230,7 @@ body::before {
     gap: 80px; /* Espacio uniforme entre los íconos */
     margin-top: 5%;
     color: #fefefe;
-    filter: drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 5px #1e90ff); /* Sombra azul para los íconos */
+    filter: drop-shadow(0 0 2px #1e90ff) drop-shadow(0 0 1px #1e90ff) drop-shadow(0 0 5px #1e90ff); /* Sombra azul para los íconos */
     /* No necesitas justify-content: space-between si usas gap */
 }
 
@@ -246,4 +257,248 @@ body::before {
 }
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semi-transparente al pasar el ratón */
+}
+
+.titulo-tecnologias{
+    margin-top: 2%;
+    color: white;
+    font-size: 24px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+    .neon-border {
+        padding: 20px;
+        font-size: 20px;
+    }
+    .titulo-principal {
+        font-size: 24px;
+    }
+    .titulo {
+        font-size: 14px;
+    }
+    .js, .mysql, .html, .java {
+        width: 40px;
+        height: 40px;
+    }
+    .redes-sociales {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contacto {
+        font-size: 24px;
+        
+    }
+    .arrow {
+        margin-top: 3%;
+        margin-left: 15%;
+    }
+    .perfil {
+        width: 120px;
+        height: 120px;
+    }
+    .tecnologias {
+        gap: 40px;
+        margin-top: 10%;
+    }
+    .titulo-tecnologias{
+        margin-top: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    .neon-border {
+        padding: 15px;
+        font-size: 18px;
+    }
+    .titulo-principal {
+        font-size: 20px;
+    }
+    .titulo {
+        font-size: 12px;
+    }
+    .js, .mysql, .html, .java {
+        width: 30px;
+        height: 30px;
+    }
+    .redes-sociales {
+        gap: 15px;
+    }
+    .contacto {
+        font-size: 20px;
+    }
+    .perfil {
+        width: 100px;
+        height: 100px;
+    }
+    .tecnologias {
+        gap: 20px;
+    }
+    .texto{
+        font-size: 15px;
+    }
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center; /* Cambia a center para que las tarjetas se mantengan juntas */
+    margin: 40px 0;
+    gap: 30px; /* Añade un gap pequeño entre las tarjetas */
+}
+
+.card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 20%; /* Ajusta el tamaño de la tarjeta para que ocupen menos espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    margin: 0; /* Elimina margen extra entre las tarjetas */
+    display: flex;
+    flex-direction: column; /* Hacer que las tarjetas se comporten como columnas */
+    justify-content: space-between; /* Espacio entre el contenido y los botones */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 15px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center; /* Centramos los botones */
+    margin-top: auto; /* Llevar los botones al fondo */
+}
+
+.btn {
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0077b6;
+}
+
+.titulo-proyectos {
+    color: white;
+    font-size: 24px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.card ul {
+    list-style-type: none; /* Elimina los puntos de la lista por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 20px 0; /* Añade un margen superior e inferior */
+}
+
+.card ul li {
+    background-color: #444; /* Fondo gris oscuro para cada elemento de la lista */
+    color: #fff; /* Texto blanco */
+    padding: 10px; /* Añade espacio dentro de cada elemento de la lista */
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición para hover */
+}
+
+.card ul li:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+    transform: translateX(5px); /* Mueve ligeramente el elemento hacia la derecha al pasar el mouse */
+}
+
+.card ul li::before {
+    content: "• "; /* Añade un símbolo antes de cada elemento */
+    color: #1e90ff; /* Color azul para el símbolo */
+    font-weight: bold; /* Negrita para el símbolo */
+}
+
+.repos-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.repo-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 1px #f8f8f8) drop-shadow(0 0 5px #fdfeff); /* Sombra azul para los íconos */
+    transition: transform 0.3s ease-in-out;
+}
+
+.repo-card h3 {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.repo-card p {
+    font-family: 'Anonymous Pro', monospace;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.repo-card .btn {
+    background-color: #1e90ff;
+    color: #1e1e1e;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.repo-card .btn:hover {
+    background-color: white;
+}
+
+.repo-card:hover {
+    transform: scale(1.05);
+}
+
+.repo-card .button-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 10px; /* Añade un pequeño margen superior si es necesario */
+}
+
+.repo-card .btn {
+    background-color: #1e90ff;
+    color: #1e1e1e;
+    text-decoration: none;
+    padding: 5px 10px; /* Botón más pequeño */
+    font-size: 12px; /* Tamaño de fuente más pequeño */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.repo-card .btn:hover {
+    background-color: #0077b6;
 }
